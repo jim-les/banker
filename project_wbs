@@ -1,0 +1,63 @@
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+# Define the WBS tasks and their hierarchy
+wbs_tasks = {
+    "Project": [
+        "Requirements",
+        "Design",
+        "Development",
+        "Testing",
+        "Deployment",
+    ],
+    "Requirements": [
+        "Identify Goals",
+        "Define Target Audience",
+        "Gather Stakeholder Input",
+    ],
+    "Design": [
+        "UI Design",
+        "Database Design",
+        "Backend Architecture",
+    ],
+    "Development": [
+        "Frontend Development",
+        "Backend Development",
+        "Integration",
+    ],
+    "Testing": [
+        "Unit Testing",
+        "Integration Testing",
+        "User Acceptance Testing",
+    ],
+    "Deployment": [
+        "Release to Production",
+    ],
+}
+
+# Create a function to plot the WBS
+def plot_wbs(ax, tasks, x, y, width, height):
+    for task in tasks:
+        # Draw a rectangle for each task
+        ax.add_patch(patches.Rectangle((x, y), width, height, linewidth=1, edgecolor="black", facecolor="lightblue"))
+        
+        # Add text label for the task
+        ax.text(x + width / 2, y + height / 2, task, ha="center", va="center")
+
+        # Recursive call for sub-tasks
+        if task in wbs_tasks:
+            plot_wbs(ax, wbs_tasks[task], x + width, y - height, width, height)
+
+# Create the figure and axis
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Set axis limits and labels
+ax.set_xlim(-1, 6)
+ax.set_ylim(-1, 1)
+ax.axis("off")
+
+# Plot the WBS starting from the root node
+plot_wbs(ax, wbs_tasks["Project"], x=0, y=0, width=1, height=0.2)
+
+# Show the WBS diagram
+plt.show()

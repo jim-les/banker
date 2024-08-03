@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary: darkblue;
+    --color-secondry: rgb(5, 5, 37);
+    --color-gray: gray;
+    --color-border: rgb(241, 239, 239);
+}
+
+.navbar{
+    background-color: var(--color-secondry);
+    
+}
+.dropdown-menu{
+    background-color: var(--color-secondry);
+
+}
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+
+/* services */
+.services_section .card{
+    box-shadow: 0px 0px 10px 10px;
+}
+
+/* contact us */
+.contact-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form input{
+    width: 500px;
+    height: 40px;
+    background-color: white;
+    border: 0;
+    box-shadow: 0px 0px 2px 2px;
+}
+
+.contact-form textarea{
+    width: 500px;
+    background-color: white;
+    border: 0;
+    box-shadow: 0px 0px 2px 2px;
+}
+
+
+/* profile */
+.profile-continer{
+    border: 3px solid var(--color-secondry);
+    box-shadow: 2px var(--color-secondry);
+    width: 600px;
+    height: 100vh;
+}
+
+.actions{
+    background-color: var(--color-secondry);
+    color: white;
+}
+
+.navtabs{
+    background-color: var(--color-secondry);
+}
+
+.actionBtns{
+    width: 300px;
+    border: 0;
+    height: 50%;
+    text-align: center;
+    box-shadow: 10px 10px 10px 10px;
+}

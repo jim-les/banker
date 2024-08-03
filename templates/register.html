@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL _ login</title>
+
+    <link rel="stylesheet" href="../static/css/login.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="login-section">
+        <div class="login-form">
+            <div class="row">
+                <div class="col-6 py-5 px-3" style="color: white; background-color: var(--color-primary);">
+                    <form action="/register" method="post" class="p-2">
+                        <h4 style="color: var(--color-primary);" class="text-center">SIGN-IN</h4>
+                        <div class="input-group mb-3 ">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username">
+
+                        </div>
+                        
+                        <div class="input-group mb-3 ">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <input type="submit" value="SIGNUP" class="btn" style="background-color: var(--color-primary); color: white; text-align: center;">
+                        </div>
+                    </form>
+
+                    <div class="d-flex justify-content-center">
+                        <button class="bg-danger text-light px-3 py-1" style="border-radius: 2; border: 0;">
+                            <i class="fa fa-google" style="color: white;"></i>
+                            <span>SIGNUP WITH GOOGLE</span>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-center my-2">
+                        <button class="bg-success text-light px-3 py-1 " style="border-radius: 2; border: 0;">
+                            <i class="fa fa-github" style="color: white;"></i>
+                            <span>SIGNUP WITH GITHUB</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-6 py-4 text-center" style="color: black; background-color: white;">
+                    <h4 class="text-center">Welcome back To SQDL BANK</h4>
+                    <i class="fa fa-user-circle" style="font-size: 100px;"></i>
+                    <p>Already have an account?</p>
+                    <a href="/login" class="text-center text-light bg-success px-3 py-2">LOGIN IN?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="sqli_warning text-center text-light px-4" style="display: none; box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.8); position: absolute; top: 30%; left: 43%; border: 1ps solid gray; background-color: darkblue;">
+        <h2 class="text-danger">WARNING!!!</h2>
+        <i class="fa fa-lock" style="font-size: 50px;"></i>
+        <p class="text-center">An sql attack was detected <br> You can nolonger access the website</p>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+  <script>  
+        function slqiinjectionDetected(){
+            document.querySelector(".sqli_warning").style.display="block";
+        }
+
+        {% if sql_injection_detected %}
+            slqiinjectionDetected();
+        {% endif %}
+  </script>
+
+
+</body>
+</html>
