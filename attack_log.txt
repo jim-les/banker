@@ -1,0 +1,12 @@
+Sentence: Suspicious SQL injection attempt
+Predicted Label: [[1.]]
+Actual Label: Attack
+
+Sentence: Normal user query
+Predicted Label: [[1.]]
+Actual Label: Attack
+
+Sentence: Another attack example
+Predicted Label: [[1.]]
+Actual Label: Attack
+

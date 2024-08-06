@@ -10,7 +10,7 @@ app.secret_key = 'your_secret_key'  # Replace with a secret key for session mana
 app.config['SESSION_TYPE'] = 'filesystem'
 # Load your trained deep learning model
 
-model = load_model('best_model.h5')
+model = load_model('model.h5')
 
 # Database initialization
 def init_db():
@@ -30,7 +30,15 @@ init_db()
 
 import numpy as np
 
+def preprocess_text(text):
+    # Implement your preprocessing logic here
+    # For example, lowercasing, removing special characters, etc.
+    return text.lower()  # Replace with actual preprocessing
+
 def detect_sql_injection(input_text):
+    # Preprocess the input text
+    preprocessed_input_text = preprocess_text(input_text)
+
     # Make a prediction using the loaded model
     prediction = model.predict(np.array([preprocessed_input_text]))
 
