@@ -1,5 +1,34 @@
 from flask import Flask, render_template, request, jsonify, redirect
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
+
+model = load_model('model.h5')
+print("Bellow is the model input shape")
+print(model.input_shape)
+
+tokenizer = Tokenizer(num_words=1000)  # Adjust num_words based on your vocabulary size
+max_sequence_length = 50  # Adjust based on your model's input length
+
+def preprocess_text(text):
+    text = text.lower()  # Lowercasing
+    sequences = tokenizer.texts_to_sequences([text])
+    padded_sequences = pad_sequences(sequences, maxlen=max_sequence_length)
+    return padded_sequences
+
+def detect_sql_injection(input_text):
+    # Preprocess the input text
+    preprocessed_input_text = preprocess_text(input_text)
+
+    # Make a prediction using the loaded model
+    prediction = model.predict(preprocessed_input_text)[0][0]
+    
+    if prediction >= 0.5:
+        return True  # SQL injection detected
+    else:
+        return False  # No SQL injection detected
+    
+
 import sqlite3
 from flask import session
 
@@ -10,7 +39,6 @@ app.secret_key = 'your_secret_key'  # Replace with a secret key for session mana
 app.config['SESSION_TYPE'] = 'filesystem'
 # Load your trained deep learning model
 
-model = load_model('model.h5')
 
 # Database initialization
 def init_db():
@@ -30,29 +58,11 @@ init_db()
 
 import numpy as np
 
-def preprocess_text(text):
-    # Implement your preprocessing logic here
-    # For example, lowercasing, removing special characters, etc.
-    return text.lower()  # Replace with actual preprocessing
-
-def detect_sql_injection(input_text):
-    # Preprocess the input text
-    preprocessed_input_text = preprocess_text(input_text)
-
-    # Make a prediction using the loaded model
-    prediction = model.predict(np.array([preprocessed_input_text]))
-
-    # Check the model's prediction
-    if prediction >= 0.5:  # Adjust the threshold based on your model's output
-        return True  # SQL injection detected
-
-    else:
-        return False  # No SQL injection detected
-
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -61,7 +71,7 @@ def register():
         password = request.form['password']
 
         if detect_sql_injection(username) or detect_sql_injection(password):
-            return render_template('register.html', sql_injection_detected=True)
+            return render_template('register.html')
 
         # Check if the username is already taken (you can use a SELECT query)
         conn = sqlite3.connect('your_database.db')
