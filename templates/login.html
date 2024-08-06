@@ -77,6 +77,10 @@
             document.querySelector(".sqli_warning").style.display="block";
         }
 
+        {% if login_failed %}
+            alert("Login failed");
+        {% endif %}
+
         {% if sql_injection_detected %}
             slqiinjectionDetected();
         {% endif %}

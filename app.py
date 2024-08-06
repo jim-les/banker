@@ -22,11 +22,12 @@ def detect_sql_injection(input_text):
 
     # Make a prediction using the loaded model
     prediction = model.predict(preprocessed_input_text)[0][0]
-    
-    if prediction >= 0.5:
-        return True  # SQL injection detected
+    print("Prediction:")
+    print(prediction)
+    if prediction >= 1:
+        return False  # SQL injection detected
     else:
-        return False  # No SQL injection detected
+        return True  # No SQL injection detected
     
 
 import sqlite3
@@ -70,8 +71,8 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
-        if detect_sql_injection(username) or detect_sql_injection(password):
-            return render_template('register.html')
+        # if detect_sql_injection(username) or detect_sql_injection(password):
+        #     return render_template('register.html')
 
         # Check if the username is already taken (you can use a SELECT query)
         conn = sqlite3.connect('your_database.db')
@@ -99,7 +100,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        if detect_sql_injection(username) or detect_sql_injection(password):
+        if detect_sql_injection(username):
             return render_template('login.html', sql_injection_detected=True)
 
         # Authenticate the user against the database
@@ -115,6 +116,7 @@ def login():
             session['username'] = user[1]
             return redirect('/profile')
         else:
+            print("Login failed")
             return render_template('login.html', login_failed=True)
 
     return render_template('login.html')
