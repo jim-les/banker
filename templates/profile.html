@@ -3,25 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/index.css">
-    <title>SQLD BANK -home</title>
+    <title>SQLD BANK - Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Reset some default styles */
+        body, p, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .user_profile {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .profile-continer {
+            padding: 20px;
+        }
+
+        .navtabs {
+            background-color: #007bff;
+            border-radius: 8px;
+        }
+
+        .navtabs p {
+            margin: 0;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .profile i {
+            color: #007bff;
+        }
+
+        .profile p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .profile span {
+            font-weight: bold;
+        }
+
+        .transctions_history {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .transctions_history p {
+            margin: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .text-center i {
+            color: #6c757d;
+        }
+
+        .text-center p {
+            margin: 10px 0;
+            color: #6c757d;
+        }
+
+        .actions {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .actions p {
+            margin: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .actionBtns {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .actionBtns:hover {
+            opacity: 0.8;
+        }
+
+        .bg-primary {
+            background-color: #007bff;
+        }
+
+        .bg-success {
+            background-color: #28a745;
+        }
+
+        .bg-danger {
+            background-color: #dc3545;
+        }
+
+        .text-light {
+            color: #ffffff;
+        }
+
+        /* Drawer styles */
+        .drawer {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 250px;
+            background-color: #fff;
+            border-left: 1px solid #ddd;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .drawer.open {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .drawer-header h5 {
+            margin: 0;
+        }
+
+        .drawer-body {
+            padding: 15px;
+        }
+
+        .drawer-body button {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <section class="user_profile d-flex justify-content-center">
         <div class="profile-continer">
-            <div class="navtabs py-2 text-light px-4 d-flex align-items-center" >
-                <p><i class="fa fa-bars"></i></p>
+            <div class="navtabs py-2 text-light px-4 d-flex align-items-center">
+                <p><i class="fa fa-bars" onclick="toggleDrawer()"></i></p>
                 <p class="mx-4">Welcome Mr {{username}}</p>
             </div>
 
             <div class="profile text-center py-2">
                 <i class="fa fa-user-circle" style="font-size: 100px;"></i>
-
-                <p><span style="font-weight: 800;">Name: </span>  {{username}}</p>
-                <p><span style="font-weight: 800;">Balance: </span> $100.00 </p>
+                <p><span style="font-weight: 800;">Name: </span> {{username}}</p>
+                <p><span style="font-weight: 800;">Balance: </span> $<span id="balance">100.00</span></p>
             </div>
 
             <div class="transctions_history actions px-4">
@@ -29,7 +180,7 @@
             </div>
             <div class="text-center">
                 <i class="fa fa-money" style="font-size: 50px;"></i>
-                <p>No transaction recorder yet</p>
+                <p>No transaction recorded yet</p>
             </div>
 
             <div class="actions px-4">
@@ -37,16 +188,102 @@
             </div>
             <div class="d-flex justify-content-center">
                 <div class="">
-                    <button class="my-1 bg-primary text-light actionBtns">WITHDRAW</button> <br>
-                    <button class="my-1 bg-success text-light actionBtns">DEPOSIT</button> <br>
-                    <button class="my-1 bg-danger text-light actionBtns">LOG OUT</button> <br>
+                    <button class="my-1 bg-primary text-light actionBtns" onclick="openDrawer('withdraw')">WITHDRAW</button> <br>
+                    <button class="my-1 bg-success text-light actionBtns" onclick="openDrawer('deposit')">DEPOSIT</button> <br>
+                    <button class="my-1 bg-danger text-light actionBtns" onclick="logout()">LOG OUT</button> <br>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <h5 id="drawer-title">Action</h5>
+            <button class="close" onclick="toggleDrawer()">×</button>
+        </div>
+        <div class="drawer-body">
+            <form id="drawer-form">
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="submitAction()">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        let balance = 100.00;
+
+        function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            drawer.classList.toggle('open');
+        }
+
+        function openDrawer(action) {
+            const drawer = document.getElementById('drawer');
+            const drawerTitle = document.getElementById('drawer-title');
+            const amountInput = document.getElementById('amount');
+            drawer.classList.add('open');
+            amountInput.value = '';
+            if (action === 'withdraw') {
+                drawerTitle.textContent = 'Withdraw Funds';
+                drawerForm.onsubmit = function(event) {
+                    event.preventDefault();
+                    withdraw(amountInput.value);
+                };
+            } else if (action === 'deposit') {
+                drawerTitle.textContent = 'Deposit Funds';
+                drawerForm.onsubmit = function(event) {
+                    event.preventDefault();
+                    deposit(amountInput.value);
+                };
+            }
+        }
+
+        function submitAction() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            if (isNaN(amount) || amount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+            const action = document.getElementById('drawer-title').textContent.includes('Withdraw') ? 'withdraw' : 'deposit';
+            if (action === 'withdraw') {
+                withdraw(amount);
+            } else if (action === 'deposit') {
+                deposit(amount);
+            }
+        }
+
+        function withdraw(amount) {
+            if (amount > balance) {
+                alert('Insufficient funds.');
+            } else {
+                balance -= amount;
+                updateBalance();
+                alert('Withdrawal successful.');
+            }
+            toggleDrawer();
+        }
+
+        function deposit(amount) {
+            balance += amount;
+            updateBalance();
+            alert('Deposit successful.');
+            toggleDrawer();
+        }
+
+        function updateBalance() {
+            document.getElementById('balance').textContent = balance.toFixed(2);
+        }
+
+        function logout() {
+            alert('Logged out successfully.');
+            window.location.href = "/login"
+        }
+    </script>
 </body>
 </html>

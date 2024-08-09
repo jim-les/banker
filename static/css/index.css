@@ -1,79 +1,103 @@
-*{
+:root {
+    --color-primary: #3498db;
+    --color-secondary: #2ecc71;
+}
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f5f5f5;
 }
 
-:root{
-    --color-primary: darkblue;
-    --color-secondry: rgb(5, 5, 37);
-    --color-gray: gray;
-    --color-border: rgb(241, 239, 239);
+.navbar {
+    background-color: var(--color-primary);
+    padding: 1rem;
 }
 
-.navbar{
-    background-color: var(--color-secondry);
-    
+.navbar-brand {
+    color: white;
+    font-size: 24px;
 }
-.dropdown-menu{
-    background-color: var(--color-secondry);
 
+.navbar-nav .nav-link {
+    color: gray !important;
+    font-size: 16px;
 }
-.nav-link{
+
+.navbar-nav .nav-link:hover {
+    color: #ddd !important;
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.services_section {
+    background-color: #fff;
+    padding: 2rem 0;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-title {
+    font-size: 24px;
+    margin: 1rem 0;
+}
+
+.contact_us {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 2rem 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer h3, .footer h4 {
+    margin-top: 0;
+}
+
+.footer a {
     color: white;
     text-decoration: none;
 }
 
-
-/* services */
-.services_section .card{
-    box-shadow: 0px 0px 10px 10px;
+.footer a:hover {
+    text-decoration: underline;
 }
 
-/* contact us */
-.contact-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.about_us {
+    background-color: #fff;
+    padding: 2rem 0;
 }
 
-.contact-form input{
-    width: 500px;
-    height: 40px;
-    background-color: white;
-    border: 0;
-    box-shadow: 0px 0px 2px 2px;
+.about_us h1 {
+    margin-bottom: 2rem;
 }
 
-.contact-form textarea{
-    width: 500px;
-    background-color: white;
-    border: 0;
-    box-shadow: 0px 0px 2px 2px;
+.about_us h2 {
+    margin-top: 1.5rem;
+    color: var(--color-primary);
 }
 
-
-/* profile */
-.profile-continer{
-    border: 3px solid var(--color-secondry);
-    box-shadow: 2px var(--color-secondry);
-    width: 600px;
-    height: 100vh;
+.team_member {
+    margin-bottom: 2rem;
 }
 
-.actions{
-    background-color: var(--color-secondry);
-    color: white;
-}
-
-.navtabs{
-    background-color: var(--color-secondry);
-}
-
-.actionBtns{
-    width: 300px;
-    border: 0;
-    height: 50%;
-    text-align: center;
-    box-shadow: 10px 10px 10px 10px;
+.team_member img {
+    border: 3px solid var(--color-primary);
 }

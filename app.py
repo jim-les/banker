@@ -160,6 +160,15 @@ def statistics():
 
     return render_template('admin/statistics.html', labels=labels, data=data)
 
+# about 
+@app.route('/about')
+def about():
+    return render_template('/about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('/contact.html')
+
 
 if __name__ == '__main__':
     # on public port 0000

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SQLD BANK</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-bank" style="font-size: 40px; color: aliceblue;"></i> SQLD BANK
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 mx-2">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <a href="/login" class="ml-2">
+                    <i class="fa fa-user-circle" style="color: white; font-size: 30px;"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact_us my-5">
+        <div class="container">
+            <h1 class="text-center my-5">CONTACT US</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Our Contact Details</h2>
+                    <p><strong>Email:</strong> info@sqldbank.co.ke</p>
+                    <p><strong>Office Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Get in Touch</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h2>Our Location</h2>
+                    <div id="map" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer p-5 text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h3>Welcome to SQLD BANK</h3>
+                    <hr class="bg-light">
+                    <h5>NAV LINKS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-light">Home</a></li>
+                        <li><a href="../about.html" class="text-light">About</a></li>
+                        <li><a href="#" class="text-light">Contact</a></li>
+                        <li><a href="#" class="text-light">Services</a></li>
+                        <li><a href="/login" class="text-light">Login</a></li>
+                        <li><a href="/signup" class="text-light">Signup</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4>SOCIALS</h4>
+                    <div>
+                        <a href="#" class="text-light mx-2"><i class="fa fa-youtube" style="font-size: 33px;"></i></a>
+                        <a href="#" class="text-light mx-2"><i class="fa fa-facebook" style="font-size: 33px;"></i></a>
+                        <a href="#" class="text-light mx-2"><i class="fa fa-twitter" style="font-size: 33px;"></i></a>
+                        <a href="#" class="text-light mx-2"><i class="fa fa-linkedin" style="font-size: 33px;"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK3g0A4zvo6Y2bQp4DY0lmeMllbnS7OTQJ6XJn52d2Hg4wr" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UOa5Ie84W7y7ITek7auWmVyz46b9S7Ne5zF8j7W6W5D7FnfJ5X6tvz5c4v8S+9c5" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-Chfyy5t6C9N1mQ0E9YtDLO+1k6K8M2bkDFXTrkKz0Fvl8OWr6zyF/6In43Gq2W5G" crossorigin="anonymous"></script>
+    <script>
+        function initMap() {
+            var location = {lat: -1.2921, lng: 36.8219}; // Replace with your location coordinates
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>

@@ -1,61 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLD BANK - Home</title>
     <link rel="stylesheet" href="../static/css/index.css">
-    <title>SQLD BANK -home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light py-4" >
-        <div class="container px-0">
-           <div>
-                <i class="fa fa-bank" style="font-size: 40px; color: aliceblue;"></i>
-                <a class="navbar-brand" href="#" style="color: white;">SQDL BANK </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-           </div>
-            
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-bank" style="font-size: 40px; color: aliceblue;"></i> SQLD BANK
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#" style="color: white;">About</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Transactions</a>
-                        <a class="dropdown-item" href="#">Securities</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Insurances</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#" tabindex="-1" aria-disabled="true">Contact</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" style="color: black" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" style="color: black" href="about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" style="color: black" href="/contact">Contact</a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 mx-2">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
-
-                <div>
-                    <a href="/login"><i class="fa fa-user-circle" style="color: white; font-size: 30px;" class=""></i></a>
-                </div>
+                <a href="/login" class="ml-2">
+                    <i class="fa fa-user-circle" style="color: white; font-size: 30px;"></i>
+                </a>
             </div>
         </div>
     </nav>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 70vh;">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -63,13 +48,25 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="../static/Images/download.jpeg" class="d-block w-100" alt="..." style="height: 80vh;">>
+                <img src="../static/Images/download.jpeg" class="d-block w-100" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Welcome to SQLD Bank</h2>
+                    <p>Your trusted partner in secure and innovative banking solutions.</p>
+                </div>
             </div>
             <div class="carousel-item">
-            <img src="../static/Images/download (1).jpeg" class="d-block w-100" alt="..." style="height: 80vh;">>
+                <img src="../static/Images/download (1).jpeg" class="d-block w-100" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Our Services</h2>
+                    <p>Explore a range of services designed to meet your financial needs.</p>
+                </div>
             </div>
             <div class="carousel-item">
-            <img src="https://familybank.co.ke/family-bank/wp-content/uploads/2022/04/WYC_7865-scaled.jpg" class="d-block w-100" alt="..." style="height: 80vh;">>
+                <img src="https://familybank.co.ke/family-bank/wp-content/uploads/2022/04/WYC_7865-scaled.jpg" class="d-block w-100" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Community Focus</h2>
+                    <p>We are committed to giving back and supporting our local community.</p>
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -81,133 +78,172 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    
 
-    <!-- <form method="POST" action="/predict">
-        <input type="text" name="user_input" placeholder="Enter your input">
-        <button type="submit">Predict</button>
-    </form> -->
-
-
-    <!-- servies provided -->
     <section class="services_section my-4">
         <div class="container">
-            <h1 class="text-center my-5" style="color: var(--color-primary);"">OUR SERVICES</h1>
+            <h1 class="text-center my-5">OUR SERVICES</h1>
             <div class="row">
-                <!-- service card -->
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
                             <i class="fa fa-lock" style="font-size: 100px;"></i>
-                            <p style="color: var(--color-primary); font-weight: 800; font-size: 33px">SECURITIES</p>
-                            <P class="text-left" style="color: var(--color-gray)">SQDL Ban provodes the best banking security for there clients finance. We advice every one to bring there money and help us grow to gether as a community</P>
+                            <h3 class="card-title" style="color: var(--color-primary);">SECURITIES</h3>
+                            <p class="card-text">SQLD Bank provides the best banking security for our clients' finances. We advise everyone to bring their money and help us grow together as a community.</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- service card -->
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
                             <i class="fa fa-money" style="font-size: 100px;"></i>
-                            <p style="color: var(--color-primary); font-weight: 800; font-size: 33px">INSUARNACE</p>
-                            <P class="text-left" style="color: var(--color-gray)">SQDL Ban provodes the best banking security for there clients finance. We advice every one to bring there money and help us grow to gether as a community</P>
+                            <h3 class="card-title" style="color: var(--color-primary);">INSURANCES</h3>
+                            <p class="card-text">SQLD Bank provides top-notch insurance services to protect your investments. Trust us to secure your financial future.</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- service card -->
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
                             <i class="fa fa-users" style="font-size: 100px;"></i>
-                            <p style="color: var(--color-primary); font-weight: 800; font-size: 33px">BENEFITS</p>
-                            <P class="text-left" style="color: var(--color-gray)">SQDL Ban provodes the best banking security for there clients finance. We advice every one to bring there money and help us grow to gether as a community</P>
+                            <h3 class="card-title" style="color: var(--color-primary);">BENEFITS</h3>
+                            <p class="card-text">At SQLD Bank, we offer numerous benefits to our clients, including exclusive offers and personalized services to meet your needs.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section style="width: 100% ; height: 70vh;">
-        <img src="../static/Images/th.jpeg" alt="" style="width: 100%; height: 70vh;">
-    </section>
-    <!-- contact us -->
-    <section class="contact_us my-5">
+
+    <section class="about_us my-5 bg-light py-5">
         <div class="container">
-            <h1 class="text-center" style="color: var(--color-primary);">CONTACT US</h1>
-            <p class="text-center">Send us an email for any query related</p>
-            <div class="contact-form">
-                <form action="" method="post">
-                    <div class="my-3">
-                        <input type="text" class="px-3" name="fullname" id="fullname" placehoder="Full name" required>
-                    </div>
+            <h1 class="text-center">ABOUT US</h1>
+            <p class="text-center">SQLD Bank is committed to providing excellent banking services with a focus on security, customer satisfaction, and community involvement. With a dedicated team and state-of-the-art technology, we strive to make banking simple and secure for everyone.</p>
+        </div>
+    </section>
 
-                    <div class="my-3">
-                        <input type="text" class="px-3" name="Subject" id="Subject" placeholder="Subject" required>
+    <section class="testimonials my-5">
+        <div class="container">
+            <h1 class="text-center">WHAT OUR CUSTOMERS SAY</h1>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">"SQLD Bank has been amazing. Their customer service is excellent and their services are top-notch!"</p>
+                            <footer class="blockquote-footer">Jane Doe, <cite title="Source Title">Happy Customer</cite></footer>
+                        </div>
                     </div>
-
-                    <div class="my-3">
-                        <input type="email" class="px-3" name="email" id="email" placeholder="email" required>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">"I appreciate the security and ease of use of SQLD Bank's online services. It's a great experience!"</p>
+                            <footer class="blockquote-footer">John Smith, <cite title="Source Title">Satisfied Client</cite></footer>
+                        </div>
                     </div>
-
-                    <div class="my-3">
-                        <textarea name="message" class="px-3" id="message" cols="30" rows="10" placeholder="Write you message here!"></textarea>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">"Their insurance options are comprehensive and affordable. Highly recommend SQLD Bank!"</p>
+                            <footer class="blockquote-footer">Emily Johnson, <cite title="Source Title">Valued Customer</cite></footer>
+                        </div>
                     </div>
-                    <input type="submit" value="SEND MAIL" style="background-color: var(--color-primary); color: white;">
-                </form>
+                </div>
             </div>
         </div>
     </section>
 
-
-    <footer class="footer  p-5 text-light" style="background-color: black;">
-        <div class="row">
-            <div class="col-4">
-                <h3>Welcome to the SQDL BANK </h3>
-                <hr class="bg-light">
-
-                <h5>NAV LINKS</h5>
-                <ul class="list-group">
-                    <li class="list-item">HOME</li>
-                    <li class="list-item">ABOUT</li>
-                    <li class="list-item">CONTACT</li>
-                    <li class="list-item">SERVICES</li>
-                    <li class="list-item">LOGIN</li>
-                    <li class="list-item">SIGNUP</li>
-                </ul>
-            </div>
-
-            <div class="col-4">
-                <h4>SOCIALS</h4>
-                <div>
-                    <i class="fa fa-youtube mx-3" style="font-size: 33px;"></i>
-                    <i class="fa fa-twitter mx-3" style="font-size: 33px;"></i>
-                    <i class="fa fa-linkedin mx-3" style="font-size: 33px;"></i>
-                    <i class="fa fa-facebook mx-3" style="font-size: 33px;"></i>
-                </div>
-            </div>
-
-            <div class="div col-4">
-                <form action="" method="post">
-                    <h4>SUBSCRIBE</h4>
-                    <div class="input-group mb-3 bg-angry">
-                        <input type="text" class="form-control" style="border:3px red; color: white" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon1" style="background-color: red;"><i class="fa fa-send" style="color: white;"></i></span>
+    <section class="featured_services my-5 bg-light py-5">
+        <div class="container">
+            <h1 class="text-center">FEATURED SERVICES</h1>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fa fa-credit-card" style="font-size: 100px;"></i>
+                            <h3 class="card-title" style="color: var(--color-primary);">CREDIT CARDS</h3>
+                            <p class="card-text">Enjoy a wide range of credit cards with benefits and rewards tailored to your needs.</p>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fa fa-home" style="font-size: 100px;"></i>
+                            <h3 class="card-title" style="color: var(--color-primary);">MORTGAGES</h3>
+                            <p class="card-text">We offer competitive mortgage rates and flexible options for your home financing needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fa fa-briefcase" style="font-size: 100px;"></i>
+                            <h3 class="card-title" style="color: var(--color-primary);">INVESTMENTS</h3>
+                            <p class="card-text">Explore our investment products and services to grow your wealth and secure your future.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
+    </section>
 
-        <div class="text-center">
-            <i>&copy;</i>copywrite by SQDLBANK
+    <section class="news_updates my-5">
+        <div class="container">
+            <h1 class="text-center">NEWS & UPDATES</h1>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="News Item 1">
+                        <div class="card-body">
+                            <h5 class="card-title">New Branch Opening</h5>
+                            <p class="card-text">We are excited to announce the opening of our new branch in downtown. Visit us for more services and offers.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="News Item 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Appreciation Event</h5>
+                            <p class="card-text">Join us for a special event to celebrate our customers and their loyalty with exciting activities and giveaways.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="News Item 3">
+                        <div class="card-body">
+                            <h5 class="card-title">New Online Banking Features</h5>
+                            <p class="card-text">Discover the latest features added to our online banking platform to enhance your banking experience.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="call_to_action my-5 bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Ready to Experience the Best in Banking?</h1>
+            <p>Sign up today and start enjoying the full range of services SQLD Bank has to offer. Join us now and be a part of our community!</p>
+            <a href="/login" class="btn btn-light btn-lg">Sign Up Now</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 SQLD BANK. All rights reserved.</p>
+            <a href="/privacy-policy" class="text-white">Privacy Policy</a> | <a href="/terms-of-service" class="text-white">Terms of Service</a>
         </div>
     </footer>
-     <!-- scripts -->
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK3eS6G0M8y0Q4M3a/4pK7fQ8yV1qJ8ROl2cQGQ7e4/e1bK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UOa2Vf0t5gx4+w53f2HcA4I1o7wG47B6fyLq8h8Xo6P68c8z1a/4dGdFuBODa5Pa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-fnmOC2n1g2TjDC1Dbf2aZtq2W/Z6Hugz3pF/87b10JCBXrN+n2fF8V9mt2F/z4/W" crossorigin="anonymous"></script>
 </body>
 </html>
