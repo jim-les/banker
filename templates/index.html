@@ -85,25 +85,28 @@
         </div>
     </nav>
 
-    <div class="container d-flex justify-content-between align-items-center" style="height: 90vh;">
-        <div class="mb-4 w-50">
-            <h1 style="font-size: 3.4rem; font-weight: 800;" class="text-primary">Welcome to SQLD Bank</h1>
-            <p style="font-size: 1.5rem; font-weight: 600;">Your trusted partner for all your financial needs.</p>
-            <p style="font-size: 1.2rem; font-style: italic;">Join us today and experience the best in banking services.</p>
-            <button class="btn">
-                <a href="/login" class="btn btn-primary btn-lg">Get Started</a>
-            </button>
-        </div>
+    <div class="container  d-mb-flex justify-content-between align-items-center" style="height: 90vh;">
+        <div class="row">
 
-        <div class="w-50" style="overflow: hidden;">
-            <div class="carousel">
-                <div class="carousel-images">
-                    <img src="../static/Images/download.jpeg" alt="Image 1">
-                    <img src="../static/Images/download (1).jpeg" alt="Image 2">
-                    <img src="../static/Images/th.jpeg" alt="Image 3">
+            <div class="mb-4 col-12 col-md-6">
+                <h1 style="font-size: 3.4rem; font-weight: 800;" class="text-primary">Welcome to SQLD Bank</h1>
+                <p style="font-size: 1.5rem; font-weight: 600;">Your trusted partner for all your financial needs.</p>
+                <p style="font-size: 1.2rem; font-style: italic;">Join us today and experience the best in banking services.</p>
+                <button class="btn">
+                    <a href="/login" class="btn btn-primary btn-lg">Get Started</a>
+                </button>
+            </div>
+    
+            <div class="col-12 col-md-6" style="overflow: hidden;">
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <img src="../static/Images/download.jpeg" alt="Image 1">
+                        <img src="../static/Images/download (1).jpeg" alt="Image 2">
+                        <img src="../static/Images/th.jpeg" alt="Image 3">
+                    </div>
+                    <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
                 </div>
-                <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
-                <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
             </div>
         </div>
     </div>
@@ -304,9 +307,12 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK3eS6G0M8y0Q4M3a/4pK7fQ8yV1qJ8ROl2cQGQ7e4/e1bK" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UOa2Vf0t5gx4+w53f2HcA4I1o7wG47B6fyLq8h8Xo6P68c8z1a/4dGdFuBODa5Pa" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-fnmOC2n1g2TjDC1Dbf2aZtq2W/Z6Hugz3pF/87b10JCBXrN+n2fF8V9mt2F/z4/W" crossorigin="anonymous"></script>
+     <!-- jQuery -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <!-- Popper.js -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+     <!-- Bootstrap JS -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-images img');
