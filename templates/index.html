@@ -52,6 +52,26 @@
     .carousel-button.right {
         right: 10px;
     }
+
+    @media screen and (max-width: 400px) {
+        .carousel-button {
+            font-size: 20px;
+        }        
+
+        .carousel-button.left {
+            left: 5px;
+        }
+
+        .carousel-button.right {
+            right: 5px;
+        }
+
+        .carousel-images img {
+            border-radius: 0;
+            width: 100%;
+            max-width: 355px;
+        }
+    }
 </style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -88,21 +108,23 @@
     <div class="container  d-mb-flex justify-content-between align-items-center" style="height: 90vh;">
         <div class="row">
 
-            <div class="mb-4 col-12 col-md-6">
+            <div class="mb-4 col-12 col-md-6 d-flex align-items-center">
+                <div>
                 <h1 style="font-size: 3.4rem; font-weight: 800;" class="text-primary">Welcome to SQLD Bank</h1>
                 <p style="font-size: 1.5rem; font-weight: 600;">Your trusted partner for all your financial needs.</p>
                 <p style="font-size: 1.2rem; font-style: italic;">Join us today and experience the best in banking services.</p>
-                <button class="btn">
-                    <a href="/login" class="btn btn-primary btn-lg">Get Started</a>
+                <button class="btn" >
+                    <a href="/login" class="btn btn-primary btn-lg" style="color: white; width: 300px; padding: 12px 0; border-radius: 30px;">Get Started</a>
                 </button>
+            </div>
             </div>
     
             <div class="col-12 col-md-6" style="overflow: hidden;">
                 <div class="carousel">
                     <div class="carousel-images">
-                        <img src="../static/Images/download.jpeg" alt="Image 1">
-                        <img src="../static/Images/download (1).jpeg" alt="Image 2">
-                        <img src="../static/Images/th.jpeg" alt="Image 3">
+                        <img src="../static/Images/image2.jpg" alt="Image 1" style="width: 100%;">
+                        <img src="../static/Images/image1.jpg" alt="Image 2" style="width: 100%;">
+                        <img src="../static/Images/image3.jpg" alt="Image 3" style="width: 100%;">
                     </div>
                     <button class="carousel-button left" onclick="prevSlide()">&#10094;</button>
                     <button class="carousel-button right" onclick="nextSlide()">&#10095;</button>
@@ -120,7 +142,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <div class="card-body">
-                            <img src="https://static.vecteezy.com/system/resources/previews/022/947/258/non_2x/digital-data-protection-design-element-icon-cyber-security-illustration-cloud-computing-network-safety-concept-free-png.png" alt="" width="200">
+                            <img src="https://static.vecteezy.com/system/resources/previews/022/947/258/non_2x/digital-data-protection-design-element-icon-cyber-security-illustration-cloud-computing-network-safety-concept-free-png.png" alt="" width="200px">
                             <h3 class="card-title" style="color: var(--color-primary);">SECURITIES</h3>
                             <p class="card-text">SQLD Bank provides the best banking security for our clients' finances. We advise everyone to bring their money and help us grow together as a community.</p>
                         </div>
